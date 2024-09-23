@@ -1,13 +1,9 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "tapswap/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.10"
-
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
@@ -15,5 +11,9 @@
       "src": "/(.*)",
       "dest": "tapswap/wsgi.py"
     }
-  ]
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "tapswap.settings",
+    "DATABASE_URL": "./sqlite3.db"
+  }
 }
