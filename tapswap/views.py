@@ -59,6 +59,7 @@ class EarnPageView(APIView):
             "user_coin": user_coin.coin,
             "add_coin": user_coin.add,
             "max_coin": user_coin.max_coin,
+            "limit_coin": user_coin.limit
         }
         return Response(data, status=status.HTTP_200_OK)
 
